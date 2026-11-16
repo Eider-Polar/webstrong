@@ -1,0 +1,10 @@
+import { useContext } from 'react';
+import { PosContext } from '../context/PosContext';
+
+export const usePos = () => {
+  const context = useContext(PosContext);
+  if (!context) throw new Error('usePos debe usarse dentro de PosProvider');
+  return context;
+};
+
+export default usePos;
